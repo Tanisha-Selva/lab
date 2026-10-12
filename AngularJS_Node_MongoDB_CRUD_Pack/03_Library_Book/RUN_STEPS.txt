@@ -1,0 +1,87 @@
+Library Book Management - RUN STEPS
+==============================
+
+REQUIREMENTS
+------------
+- Node.js installed.
+- MongoDB installed and running.
+- Chrome or Edge.
+- VS Code and Live Server are NOT required.
+
+STEP 1 - EXTRACT
+----------------
+Extract the master ZIP anywhere, for example:
+D:\LabPractical\
+
+Open Command Prompt.
+
+STEP 2 - ENTER THIS SCENARIO FOLDER
+-----------------------------------
+Example:
+cd D:\LabPractical\AngularJS_Node_MongoDB_CRUD_Pack\03_Library_Book
+
+Use the actual extracted path if different.
+
+STEP 3 - INSTALL BACKEND PACKAGES
+----------------------------------
+Run this ONCE for this scenario:
+npm install
+
+You need internet for npm install unless your lab already has the node_modules
+folder copied into the project. After npm install succeeds, normal running does
+not need npm install again.
+
+STEP 4 - START MONGODB
+----------------------
+MongoDB must be running before starting the application.
+
+If MongoDB is installed as a Windows service, it may already be running.
+
+If your lab uses a manual MongoDB installation, follow the lab's MongoDB
+startup method. A typical installation uses:
+mongod
+
+Do not run "mongod" if your lab has already configured MongoDB as a service.
+
+STEP 5 - START THE APPLICATION
+------------------------------
+From THIS scenario folder, run:
+npm start
+
+You should see:
+MongoDB connected
+Application running at http://localhost:5000
+
+STEP 6 - OPEN THE BROWSER
+-------------------------
+Open Chrome/Edge and enter:
+http://localhost:5000
+
+Do NOT double-click index.html for normal operation.
+
+STEP 7 - TEST CRUD
+------------------
+1. Fill the form and click Add.
+2. Confirm the new record appears in the table.
+3. Click Edit.
+4. Change a value and click Update.
+5. Click Delete and confirm.
+6. Refresh the browser. MongoDB records should still be present.
+
+STEP 8 - STOP
+-------------
+Return to Command Prompt and press:
+Ctrl + C
+
+TROUBLESHOOTING
+---------------
+- "npm is not recognized": Node.js is not installed or not on PATH.
+- "Cannot find module": run npm install inside this folder.
+- "MongoDB connection failed": start MongoDB and run npm start again.
+- "EADDRINUSE": another program is using port 5000. Stop it or close the
+  previous Node server.
+- Angular expressions appear as text: open http://localhost:5000, ensure
+  frontend/lib/angular.min.js exists, and refresh.
+- If the local AngularJS file is missing/corrupt, the HTML has a CDN fallback,
+  but that fallback requires internet. For a fully offline lab, restore the
+  supplied local AngularJS file.

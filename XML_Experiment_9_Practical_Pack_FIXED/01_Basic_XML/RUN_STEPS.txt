@@ -1,0 +1,21 @@
+BASIC XML - RUN STEPS
+=====================
+Files:
+- books.xml
+
+Open books.xml in a browser or text editor.
+
+Check:
+- exactly one root element: catalog
+- book elements are nested inside catalog
+- title, author and price are closed correctly
+- attribute values, if present, must be quoted
+
+This demonstrates well-formed XML. It does not declare a DTD.
+
+Output:
+You should see the XML tree/raw XML depending on the browser.
+
+Formatting:
+Use an XML formatter/pretty printer if internet is available, or indent the
+file manually in a text editor. Formatting does not change XML meaning.

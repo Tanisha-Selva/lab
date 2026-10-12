@@ -1,0 +1,47 @@
+XML EXPERIMENT 9 - QUICK RUN
+
+01 Basic XML
+    Double-click books.xml
+    Optional validation:
+    py ..\09_Offline_Validator\validate_xml.py books.xml
+
+02 Internal DTD
+    Double-click books.xml
+    Validate:
+    py ..\09_Offline_Validator\validate_xml.py books.xml
+
+03 External DTD
+    Keep books.xml + books.dtd together.
+    Double-click books.xml.
+    Validate:
+    py ..\09_Offline_Validator\validate_xml.py books.xml
+
+04 XML + CSS
+    Keep books.xml + books.css together.
+    Double-click books.xml.
+
+05 XML + XSLT Table
+    Keep books.xml + books.xsl together.
+    Double-click books.xml.
+
+06 XML + XSLT List
+    Keep books.xml + books.xsl together.
+    Double-click books.xml.
+
+07 XML + XSLT Report
+    Keep books.xml + books.xsl together.
+    Double-click books.xml.
+
+08 Required Fields
+    Open student.xml.
+    Validate:
+    py ..\09_Offline_Validator\validate_xml.py student.xml
+
+ONLINE:
+Use the online XML formatter/validator mentioned in the record.
+
+OFFLINE:
+Install once:
+    py -m pip install lxml
+
+Then use validate_xml.py as shown above.

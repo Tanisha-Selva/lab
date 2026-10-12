@@ -1,0 +1,35 @@
+XML EXPERIMENT 9 - ONLINE VALIDATION / RUNNING
+
+1. ONLINE XML VALIDATION
+The record mentions an online XML formatter/validator such as FreeFormatter.
+Use it to paste or upload the XML and check whether it is well-formed.
+
+Important:
+- XML has a validator/formatter, not really a "compiler".
+- For Internal DTD and External DTD, make sure the validator checks the DTD too.
+- For External DTD, books.xml and books.dtd must be supplied together.
+
+2. RUN XML + CSS LOCALLY
+Open:
+04_XML_CSS_Formatter\books.xml
+Double-click books.xml.
+Keep books.css in the same folder.
+The browser should display the CSS-styled XML.
+
+3. RUN XML + XSLT LOCALLY
+For 05, 06 and 07:
+- Keep books.xml and books.xsl in the same folder.
+- Double-click books.xml.
+- The browser applies the XSLT and displays the table/list/report.
+
+If a browser does not transform local XSLT correctly, use Firefox or the local-server method below.
+
+4. SIMPLE LOCAL SERVER (OPTIONAL)
+If needed and Python is installed:
+Open CMD in the required experiment folder and run:
+    py -m http.server 8000
+
+Then open:
+    http://localhost:8000/books.xml
+
+No Node.js, npm or MongoDB is needed for XML practicals.

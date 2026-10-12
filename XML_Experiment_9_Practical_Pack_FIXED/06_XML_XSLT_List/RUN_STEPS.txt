@@ -1,0 +1,15 @@
+XML + XSLT LIST - RUN STEPS
+===========================
+Files:
+- books.xml
+- books.xsl
+
+Keep both together. Open books.xml.
+
+Expected output:
+A heading and a bulleted list containing title, author and price.
+
+If local XSLT is blocked, use:
+python -m http.server 8000
+and open http://localhost:8000/books.xml
+from this folder, if Python is available.

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="labApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MainController">
+<div class="container">
+  <h1>Student Attendance Management</h1>
+  <p class="subtitle">AngularJS + Node.js + MongoDB CRUD Application</p>
+
+  <div class="card">
+    <h2>{{ editing ? "Update" : "Add" }} Attendance Record</h2>
+    <form name="recordForm" ng-submit="save()" novalidate>
+      <div class="form-grid">
+        
+<div class="field">
+  <label>Student Name</label>
+  <input type="text" ng-model="form.studentName" required placeholder="Enter student name">
+</div>
+<div class="field">
+  <label>Roll Number</label>
+  <input type="text" ng-model="form.rollNo" required placeholder="Enter roll number">
+</div>
+<div class="field">
+  <label>Date</label>
+  <input type="date" ng-model="form.date" required>
+</div>
+<div class="field">
+  <label>Status</label>
+  <select ng-model="form.status" required>
+    <option value="">Select status</option>
+    <option>Present</option>
+    <option>Absent</option>
+  </select>
+</div>
+
+      </div>
+      <button class="primary" type="submit" ng-disabled="recordForm.$invalid">
+        {{ editing ? "Update" : "Add" }}
+      </button>
+      <button class="secondary" type="button" ng-if="editing" ng-click="cancelEdit()">Cancel</button>
+    </form>
+    <div class="message success" ng-if="success">{{ success }}</div>
+    <div class="message error" ng-if="error">{{ error }}</div>
+  </div>
+
+  <div class="card">
+    <h2>Records</h2>
+    <table>
+      <thead><tr>
+        <th>Student Name</th><th>Roll Number</th><th>Date</th><th>Status</th>
+        <th>Actions</th>
+      </tr></thead>
+      <tbody>
+        <tr ng-repeat="item in items track by item._id">
+          <td>{{ item.studentName }}</td><td>{{ item.rollNo }}</td><td>{{ item.date }}</td><td>{{ item.status }}</td>
+          <td>
+            <button class="edit" ng-click="edit(item)">Edit</button>
+            <button class="danger" ng-click="remove(item._id)">Delete</button>
+          </td>
+        </tr>
+        <tr ng-if="items.length === 0"><td class="empty" colspan="5">No records found.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Local AngularJS is loaded first. CDN fallback is included for environments with internet. -->
+<script src="lib/angular.min.js"></script>
+<script>
+if (typeof angular === "undefined") {
+  document.write('<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"><\/script>');
+}
+</script>
+<script src="app.js"></script>
+</body>
+</html>

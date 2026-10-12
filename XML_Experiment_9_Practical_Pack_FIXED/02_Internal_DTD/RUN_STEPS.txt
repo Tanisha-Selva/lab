@@ -1,0 +1,23 @@
+INTERNAL DTD - RUN STEPS
+========================
+File:
+- books.xml
+
+The DTD is inside the DOCTYPE declaration.
+
+Rules:
+- catalog must contain one or more book elements
+- each book must contain title, author, then price
+- title, author and price contain parsed text
+
+Validation:
+A DTD-aware XML validator can validate this document against its internal DTD.
+A browser displaying the document is not proof of DTD validation.
+
+Try changing the order to:
+price, title, author
+A DTD-aware validator should report a validity error.
+
+Do not say that <!ELEMENT title (#PCDATA)> prevents an empty string. It only
+declares the content type as parsed character data; DTDs do not generally
+provide a minimum-length text constraint.

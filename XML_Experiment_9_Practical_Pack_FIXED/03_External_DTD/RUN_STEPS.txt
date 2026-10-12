@@ -1,0 +1,20 @@
+EXTERNAL DTD - RUN STEPS
+========================
+Files:
+- books.xml
+- books.dtd
+
+IMPORTANT:
+Keep books.xml and books.dtd in the SAME folder.
+
+books.xml contains:
+<!DOCTYPE catalog SYSTEM "books.dtd">
+
+This tells an XML parser/validator to use books.dtd.
+
+Validation:
+Use a DTD-aware validator and provide BOTH books.xml and books.dtd if the
+validator asks for separate files.
+
+Do not claim that simply opening books.xml in Chrome proves DTD validation.
+Browser display and formal validation are different operations.

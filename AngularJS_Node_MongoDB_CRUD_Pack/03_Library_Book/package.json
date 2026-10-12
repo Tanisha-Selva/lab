@@ -1,0 +1,14 @@
+{
+  "name": "03-library-book",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Library Book Management lab practical",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}

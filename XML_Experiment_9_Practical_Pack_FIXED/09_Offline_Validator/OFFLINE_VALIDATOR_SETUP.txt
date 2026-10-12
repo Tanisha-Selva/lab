@@ -1,0 +1,47 @@
+OFFLINE XML VALIDATOR - WINDOWS
+
+This pack includes a small offline validator in:
+09_Offline_Validator\validate_xml.py
+
+FIRST-TIME SETUP (requires internet once)
+1. Make sure Python is installed.
+2. Open CMD.
+3. Install the XML validation library:
+   py -m pip install lxml
+
+The lxml documentation supports installation through pip.
+
+CHECK INSTALLATION:
+   py -c "import lxml; print(lxml.__version__)"
+
+AFTER INSTALLATION
+The validator works locally and does not need an online XML website.
+
+Example - Basic XML:
+   cd 01_Basic_XML
+   py ..\09_Offline_Validator\validate_xml.py books.xml
+
+Example - Internal DTD:
+   cd 02_Internal_DTD
+   py ..\09_Offline_Validator\validate_xml.py books.xml
+
+Example - External DTD:
+   cd 03_External_DTD
+   py ..\09_Offline_Validator\validate_xml.py books.xml
+
+The external DTD must remain in the same folder as books.xml:
+   books.xml
+   books.dtd
+
+For the CSS/XSLT files, the same validator checks that the XML itself is well-formed:
+   py ..\09_Offline_Validator\validate_xml.py books.xml
+
+VALID result:
+   VALID: XML is well-formed and its DTD validation passed (if a DTD is present).
+
+INVALID result:
+   INVALID XML:
+   followed by the error message.
+
+NOTE:
+The offline validator validates XML/DTD correctness. It does not replace the browser used to display CSS/XSLT output.

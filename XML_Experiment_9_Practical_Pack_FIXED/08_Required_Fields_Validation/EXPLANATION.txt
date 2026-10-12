@@ -1,0 +1,40 @@
+REQUIRED FIELDS AND VALIDATION
+==============================
+
+1. ELEMENT THAT MUST EXIST
+A DTD can require an element through the content model.
+Example:
+<!ELEMENT student (name, rollNo, department)>
+
+The student element must contain name, rollNo and department in that order.
+
+2. ATTRIBUTE THAT MUST BE PRESENT
+A DTD can require an attribute:
+<!ATTLIST student id ID #REQUIRED>
+
+#REQUIRED means the attribute must be present.
+
+3. TEXT THAT MUST NOT BE EMPTY
+DTD syntax such as:
+<!ELEMENT name (#PCDATA)>
+does NOT generally mean "at least one non-whitespace character".
+
+It declares that the element contains parsed character data.
+
+If you need a real minimum-length restriction, XML Schema (XSD) is more
+appropriate. XSD can use restrictions such as minLength.
+
+4. WELL-FORMED VS VALID
+Well-formed:
+The document follows XML syntax rules.
+
+Valid:
+The document is well-formed AND follows the rules of its DTD (or another
+declared schema).
+
+A browser displaying XML is not proof that the document is valid against a DTD.
+
+SIMPLE EXAM EXPLANATION
+-----------------------
+"Well-formed XML checks syntax. Valid XML checks syntax plus a declared
+structure such as a DTD."

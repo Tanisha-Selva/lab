@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="labApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Service Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="MainController">
+<div class="container">
+  <h1>Vehicle Service Management</h1>
+  <p class="subtitle">AngularJS + Node.js + MongoDB CRUD Application</p>
+
+  <div class="card">
+    <h2>{{ editing ? "Update" : "Add" }} Service Record</h2>
+    <form name="recordForm" ng-submit="save()" novalidate>
+      <div class="form-grid">
+        
+<div class="field">
+  <label>Owner Name</label>
+  <input type="text" ng-model="form.ownerName" required placeholder="Enter owner name">
+</div>
+<div class="field">
+  <label>Vehicle Number</label>
+  <input type="text" ng-model="form.vehicleNumber" required placeholder="Enter vehicle number">
+</div>
+<div class="field">
+  <label>Service Type</label>
+  <input type="text" ng-model="form.serviceType" required placeholder="e.g. Oil Change">
+</div>
+<div class="field">
+  <label>Service Date</label>
+  <input type="date" ng-model="form.serviceDate" required>
+</div>
+
+      </div>
+      <button class="primary" type="submit" ng-disabled="recordForm.$invalid">
+        {{ editing ? "Update" : "Add" }}
+      </button>
+      <button class="secondary" type="button" ng-if="editing" ng-click="cancelEdit()">Cancel</button>
+    </form>
+    <div class="message success" ng-if="success">{{ success }}</div>
+    <div class="message error" ng-if="error">{{ error }}</div>
+  </div>
+
+  <div class="card">
+    <h2>Records</h2>
+    <table>
+      <thead><tr>
+        <th>Owner Name</th><th>Vehicle Number</th><th>Service Type</th><th>Service Date</th>
+        <th>Actions</th>
+      </tr></thead>
+      <tbody>
+        <tr ng-repeat="item in items track by item._id">
+          <td>{{ item.ownerName }}</td><td>{{ item.vehicleNumber }}</td><td>{{ item.serviceType }}</td><td>{{ item.serviceDate }}</td>
+          <td>
+            <button class="edit" ng-click="edit(item)">Edit</button>
+            <button class="danger" ng-click="remove(item._id)">Delete</button>
+          </td>
+        </tr>
+        <tr ng-if="items.length === 0"><td class="empty" colspan="5">No records found.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Local AngularJS is loaded first. CDN fallback is included for environments with internet. -->
+<script src="lib/angular.min.js"></script>
+<script>
+if (typeof angular === "undefined") {
+  document.write('<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"><\/script>');
+}
+</script>
+<script src="app.js"></script>
+</body>
+</html>

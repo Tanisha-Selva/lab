@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog SYSTEM "books.dtd">
+<catalog>
+  <book>
+    <title>Clean Code</title>
+    <author>Robert C. Martin</author>
+    <price>450</price>
+  </book>
+  <book>
+    <title>Introduction to Algorithms</title>
+    <author>Thomas H. Cormen</author>
+    <price>700</price>
+  </book>
+</catalog>

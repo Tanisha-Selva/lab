@@ -1,0 +1,59 @@
+Vehicle Service Management - TROUBLESHOOTING
+====================================
+
+1. MONGODB CONNECTION ERROR
+---------------------------
+The application connects to:
+mongodb://127.0.0.1:27017/vehicle_service_db
+
+Make sure MongoDB is running. Node.js and npm do not install MongoDB.
+
+2. npm install FAILS
+--------------------
+Check that Node.js and npm are installed:
+node --version
+npm --version
+
+If the lab has no internet, npm install may fail on a fresh machine.
+A working node_modules directory or an offline npm package cache is then
+required. This ZIP includes package.json but intentionally does not pretend
+that npm dependencies are installed.
+
+3. ANGULARJS DOES NOT LOAD
+--------------------------
+The HTML loads:
+frontend/lib/angular.min.js
+
+Then app.js is loaded. AngularJS must be loaded before app.js.
+
+If expressions such as {{ item }} appear on the page, AngularJS did not
+load. Check the local file and use http://localhost:5000.
+
+4. PORT 5000 IS BUSY
+--------------------
+Stop the other Node process with Ctrl+C. Then run npm start again.
+
+5. PAGE IS BLANK
+----------------
+Open the browser developer console with F12 and check for errors. Confirm:
+- npm start is still running
+- URL is http://localhost:5000
+- frontend/index.html exists
+- frontend/app.js exists
+- frontend/lib/angular.min.js exists
+
+6. RECORDS DISAPPEAR AFTER RESTART
+----------------------------------
+That should NOT happen when MongoDB is working. Records are stored in the
+MongoDB database named:
+vehicle_service_db
+
+If MongoDB was deleted/reset, its data may be gone.
+
+7. NO MONGODB ON THE LAB COMPUTER
+----------------------------------
+These projects are real MongoDB CRUD applications, so they cannot honestly
+perform database CRUD without MongoDB. Ask the lab administrator whether
+MongoDB is installed as a service or whether a MongoDB server is available.
+Do not replace the database silently with browser localStorage if the exam
+requires MongoDB.

@@ -1,0 +1,22 @@
+XML + CSS FORMATTER - RUN STEPS
+===============================
+Files:
+- books.xml
+- books.css
+
+Keep both files in the SAME folder.
+
+books.xml contains exactly:
+<?xml-stylesheet type="text/css" href="books.css"?>
+
+Open books.xml in a browser.
+
+Expected output:
+The catalog should be displayed as styled book blocks/cards rather than as a
+plain XML tree, depending on browser support.
+
+If CSS does not apply:
+- confirm books.css has exactly that filename
+- confirm it is in the same folder
+- check the processing instruction spelling
+- try another browser

@@ -1,0 +1,20 @@
+REQUIRED FIELDS AND VALIDATION - RUN STEPS
+==========================================
+
+File:
+- student.xml
+- EXPLANATION.txt
+
+Open student.xml in a text editor or browser.
+
+Read EXPLANATION.txt before the practical.
+
+Important:
+- A required element is enforced by the DTD content model.
+- A required attribute uses #REQUIRED.
+- #PCDATA does not enforce non-empty text.
+- Use XSD minLength when a true minimum text length is required.
+- Well-formed and valid are not the same.
+
+To test validation, use a DTD-aware XML validator. A browser alone should not
+be described as a DTD validator.

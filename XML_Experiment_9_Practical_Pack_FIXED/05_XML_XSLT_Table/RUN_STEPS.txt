@@ -1,0 +1,25 @@
+XML + XSLT TABLE - RUN STEPS
+============================
+Files:
+- books.xml
+- books.xsl
+
+Keep both files together.
+
+books.xml contains:
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+
+Open books.xml.
+
+Expected output:
+An HTML table with Title, Author and Price columns.
+
+If local transformation is blocked by the browser, run a local server from
+this folder if Python is available:
+python -m http.server 8000
+
+Then open:
+http://localhost:8000/books.xml
+
+If Python is not installed, use an approved XSLT/XML validator when internet
+access is available.

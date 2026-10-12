@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE student [
+  <!ELEMENT student (name, rollNo, department)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT rollNo (#PCDATA)>
+  <!ELEMENT department (#PCDATA)>
+]>
+<student>
+  <name>Tanisha</name>
+  <rollNo>24IT173</rollNo>
+  <department>Information Technology</department>
+</student>

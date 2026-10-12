@@ -1,0 +1,14 @@
+{
+  "name": "02-vehicle-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vehicle Service Management lab practical",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}
